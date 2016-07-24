@@ -1,21 +1,27 @@
+# Jonathan Hernandez
+# Email: jayhernandez1987@gmail.com
+# Week 2 Assignment - SQL One to Many Relationships
+
 drop database if exists howto;
 create database howto;
 use howto;
+
+# Create the Videos and Reviewers tables
 create table Videos
 (
 	video_id int primary key auto_increment,
-    title varchar(100),
-    length int,
-    URL varchar(255)
+	title varchar(100),
+	length int,
+	URL varchar(255)
 );
 
 create table Reviewers
 (
 	reviewer_id int primary key auto_increment,
-    video_id int,
+	video_id int,
 	uname varchar(20),
-    rating smallint,
-    review varchar(30),
+	rating smallint,
+	review varchar(30),
 	foreign key (video_id) references Videos(video_id)
 );
 
